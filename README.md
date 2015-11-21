@@ -7,55 +7,51 @@ appreciation for the gem, please don't hesitate to make a donation.
 
 [![Click here to lend your support to: axlsx and make a donation at www.pledgie.com !](http://www.pledgie.com/campaigns/17814.png?skin_name=chrome)](http://www.pledgie.com/campaigns/17814)
 
-**IRC**:[irc.freenode.net / #axlsx](irc://irc.freenode.net/axlsx)
+- **IRC**: [irc.freenode.net / #axlsx](irc://irc.freenode.net/axlsx)
+- **Git**: [http://github.com/randym/axlsx](http://github.com/randym/axlsx)
+- **Twitter**: [https://twitter.com/morgan_randy](https://twitter.com/morgan_randy)
+- **Google Group**: [https://groups.google.com/forum/?fromgroups#!forum/axlsx](https://groups.google.com/forum/?fromgroups#!forum/axlsx)
+- **Author**: Randy Morgan
+- **Copyright**: 2011 - 2013
+- **License**: MIT License
+- **Latest Version**: 2.0.1
+- **Ruby Version**: 1.9.2, 1.9.3, 2.0.0
+- **JRuby Version**: 1.9 modes
+- **Rubinius Version**: rubinius 2.0.0dev * lower versions may run, this gem always tests against head.
+- **Release Date**: September 12th 2013
 
-**Git**:[http://github.com/randym/axlsx](http://github.com/randym/axlsx)
+## Integration with Rails
 
-**Twitter**: [https://twitter.com/morgan_randy](https://twitter.com/morgan_randy)
+### acts_as_xlsx
 
-**Google Group**: [https://groups.google.com/forum/?fromgroups#!forum/axlsx](https://groups.google.com/forum/?fromgroups#!forum/axlsx)
-
-**Author**: Randy Morgan
-
-**Copyright**: 2011 - 2013
-
-**License**: MIT License
-
-**Latest Version**: 2.0.1
-
-**Ruby Version**: 1.9.2, 1.9.3, 2.0.0
-
-**JRuby Version**: 1.9 modes
-
-**Rubinius Version**: rubinius 2.0.0dev * lower versions may run, this gem always tests against head.
-
-**Release Date**: September 12th 2013
-
-If you are working in rails, or with active record see:
-[acts_as_xlsx](http://github.com/randym/acts_as_xlsx)
-
-acts_as_xlsx is a simple ActiveRecord mixin that lets you generate a workbook with:
+If you are working with Rails (ActiveRecord) see
+[acts_as_xlsx](http://github.com/randym/acts_as_xlsx). It is a simple ActiveRecord
+mixin that lets you generate a workbook with:
 
 ```ruby
 Posts.where(created_at > Time.now-30.days).to_xlsx
 ```
 
-** and **
+### axlsx_rails
 
-* http://github.com/straydogstudio/axlsx_rails
-Axlsx_Rails provides an Axlsx renderer so you can move all your spreadsheet code from your controller into view files. Partials are supported so you can organize any code into reusable chunks (e.g. cover sheets, common styling, etc.) You can use it with acts_as_xlsx, placing the to_xlsx call in a view and add ':package => xlsx_package' to the parameter list. Now you can keep your controllers thin!
+[axlsx_rails](http://github.com/straydogstudio/axlsx_rails) provides an Axlsx
+renderer so you can move all your spreadsheet code from your controller into view files.
+Partials are supported so you can organize any code into reusable chunks
+(e.g. cover sheets, common styling, etc.) You can use it with acts_as_xlsx,
+placing the to_xlsx call in a view and add ':package => xlsx_package' to the parameter list.
+Now you can keep your controllers thin!
 
 There are guides for using axlsx and acts_as_xlsx here:
 [http://axlsx.blog.randym.net](http://axlsx.blog.randym.net)
 
-If you are working with ActiveAdmin see:
+### ActiveAdmin
 
-[activeadmin-axlsx](http://github.com/randym/activeadmin-axlsx)
+If you are working with ActiveAdmin see [activeadmin-axlsx](http://github.com/randym/activeadmin-axlsx)
 
 It provides a plugin and dsl for generating downloadable reports.
 
-The examples directory contains a number of more specific examples as
-well.
+The [examples directory](https://github.com/randym/axlsx/tree/master/examples) contains a number of more specific examples as well.
+
 
 Synopsis
 --------
@@ -66,53 +62,31 @@ With Axlsx you can create excel worksheets with charts, images (with links), aut
 ![Screen 1](https://github.com/randym/axlsx/raw/master/examples/sample.png)
 
 
-
 Feature List
 ------------
 
 1. Author xlsx documents: Axlsx is made to let you easily and quickly generate professional xlsx based reports that can be validated before serialization.
-
 2. Generate 3D Pie, Line, Scatter and Bar Charts: With Axlsx chart generation and management is as easy as a few lines of code. You can build charts based off data in your worksheet or generate charts without any data in your sheet at all. Customize gridlines, label rotation and series colors as well.
-
 3. Custom Styles: With guaranteed document validity, you can style borders, alignment, fills, fonts, and number formats in a single line of code. Those styles can be applied to an entire row, or a single cell anywhere in your workbook.
-
 4. Automatic type support: Axlsx will automatically determine the type of data you are generating. In this release Float, Integer, String, Date, Time and Boolean types are automatically identified and serialized to your spreadsheet.
-
 5. Automatic and fixed column widths: Axlsx will automatically determine the appropriate width for your columns based on the content in the worksheet, or use any value you specify for the really funky stuff.
-
 6. Support for automatically formatted 1904 and 1900 epochs configurable in the workbook.
-
 7. Add jpg, gif and png images to worksheets with hyperlinks
-
 8. Reference cells in your worksheet with "A1" and "A1:D4" style references or from the workbook using "Sheet1!A3:B4" style references
-
 9. Cell level style overrides for default and customized style objects
-
 10. Support for formulas, merging, row and column outlining as well as
 cell level input data validation.
-
-12. Auto filtering tables with worksheet.auto_filter as well as support for Tables
-
-13. Export using shared strings or inline strings so we can inter-op with iWork Numbers (sans charts for now).
-
-14. Output to file or StringIO
-
-15. Support for page margins and print options
-
-16. Support for password and non password based sheet protection.
-
-17. First stage interoperability support for GoogleDocs, LibreOffice,
-and Numbers
-
-18. Support for defined names, which gives you repeated header rows for printing.
-
-19. Data labels for charts as well as series color customization.
-
-20. Support for sheet headers and footers
-
-21. Pivot Tables
-
-22. Page Breaks
+11. Auto filtering tables with worksheet.auto_filter as well as support for Tables
+12. Export using shared strings or inline strings so we can inter-op with iWork Numbers (sans charts for now).
+13. Output to file or StringIO
+14. Support for page margins and print options
+15. Support for password and non password based sheet protection.
+16. First stage interoperability support for GoogleDocs, LibreOffice and Numbers.
+17. Support for defined names, which gives you repeated header rows for printing.
+18. Data labels for charts as well as series color customization.
+19. Support for sheet headers and footers
+20. Pivot Tables
+21. Page Breaks
 
 Installing
 ----------
@@ -120,9 +94,20 @@ Installing
 To install Axlsx, use the following command:
 
     $ gem install axlsx
+    
+If you're getting an error while using the gem
 
-#Examples
-------
+    lib/axlsx.rb:26:in `require': cannot load such file -- zip/zip (LoadError)
+
+make sure you add `zip-zip` to your `Gemfile`.
+
+```ruby
+# Gemfile
+gem "zip-zip"
+```
+
+Examples
+--------
 
 The example listing is getting overly large to maintain here.
 If you are using Yard, you will be able to see the examples in line below.
@@ -148,7 +133,7 @@ Please see the [examples](https://github.com/randym/axlsx/tree/master/examples/e
 
 There is much, much more you can do with this gem. If you get stuck, grab me on IRC or submit an issue to GitHub. Chances are that it has already been implemented. If it hasn't - let's take a look at adding it in.
 
-#Documentation
+Documentation
 --------------
 
 This gem is 100% documented with YARD, an exceptional documentation library. To see documentation for this, and all the gems installed on your system use:
@@ -157,12 +142,12 @@ This gem is 100% documented with YARD, an exceptional documentation library. To 
 
      yard server -g
 
-#Specs
+Specs
 ------
 
 This gem has 100% test coverage using test/unit. To execute tests for this gem, simply run rake in the gem directory.
 
-#Change log
+Change log
 ---------
 - **
   - Added Cell#name so you you can quickly create a defined name for a single cell in your workbook.
@@ -210,7 +195,9 @@ This gem has 100% test coverage using test/unit. To execute tests for this gem, 
 
 Please see the {file:CHANGELOG.md} document for past release information.
 
-# Known interoperability issues.
+Known interoperability issues.
+---------------------------------
+
 As axslx implements the Office Open XML (ECMA-376 spec) much of the
 functionality is interoperable with other spreadsheet software. Below is
 a listing of some known issues.
@@ -243,16 +230,16 @@ related to themes, which axlsx does not implement at this time.
    - charts do not render
 
 
-#Thanks!
+Thanks!
+--------
 
 Open source software is a community effort. None of this could have been
 done without the help of these awesome folks.
 
 [contributors](https://github.com/randym/axlsx/graphs/contributors)
 
-#Copyright and License
+Copyright and License
 ----------
 
 Axlsx &copy; 2011-2013 by [Randy Morgan](mailto:digial.ipseity@gmail.com).
-
 Axlsx is licensed under the MIT license. Please see the LICENSE document for more information.
